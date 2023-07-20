@@ -1,5 +1,6 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+# wriiten by: Niyi
+# This script is used to annotate videos. The annotations are saved in the YOLO (You Only Look Once) format.
+
 import cv2
 import os
 import sys
@@ -13,7 +14,7 @@ elif cv2v[0] == '2':
 if len(sys.argv) == 2:
     videoName = sys.argv[1]
 else:
-    print("Example of usage: python VideoAnnotation.py video.mp4")
+    print("Example of usage: python videoAnnotation.py Sorting_Recording.mp4")
     videoName = 'Sorting_Recording.mp4'
 
     if os.path.exists(videoName):
@@ -22,7 +23,7 @@ else:
         sys.exit("Error: Video path not provided and default doesnt exist")
 
 foldName = videoName.split('.')[0]
-foldLabel = foldName + '/labels'
+foldLabel = foldName + '/labels'  ## The annotations are saved in the YOLO (You Only Look Once) format.
 foldJpeg = foldName + '/JPEGImages'
 foldGT = foldName + '/Ground'
 foldAugment = foldJpeg

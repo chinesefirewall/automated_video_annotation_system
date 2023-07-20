@@ -4,7 +4,7 @@
 # Build command: docker build . -t "videoAnnotation:core"
 # Run command: docker run -it --rm -e DISPLAY=${DISPLAY} -e QT_X11_NO_MITSHM=1 -v /tmp/.X11-unix:/tmp/.X11-unix videoannotation:core
 # Ubuntu Version: 16.04
-# Python 3.8
+# Python >= 3.8
 # OpenCV 4.5.2
 
 
@@ -64,4 +64,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY main.py .
 
 # Run the script when the container launches
-CMD ["python3.8", "main.py"]
+CMD ["python3.8", "videoAnnotation.py"]
